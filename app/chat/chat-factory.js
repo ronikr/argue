@@ -51,6 +51,7 @@
         return {
             getArgues: function (){
                 return argues;
+
             },
 
             query: function () {
