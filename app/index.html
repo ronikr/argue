@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp" class="no-js">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
-  <link rel="stylesheet" href="vendor/angular-bootstrap/ui-bootstrap-csp.css"/>
-  <link rel="stylesheet" href="app.css">
-  <script src="vendor/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="vendor/angular-bootstrap/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet" href="app.css">
+    <script src="vendor/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 
 <header class="well">
-  <ul class="nav nav-pills">
-    <li role="presentation" ><a href="#/home">Home</a></li>
-    <li role="presentation"><a href="#/chat">Chat</a></li>
-  </ul>
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="#/home">Home</a></li>
+        <li role="presentation"><a href="#/chat">Chat</a></li>
+    </ul>
 </header>
 
 
+<div ng-view></div>
 
+<!--<div>Angular seed app: v-->
+<!--<app-version></app-version>-->
+<!--</div>-->
 
-  <div ng-view></div>
-
-  <!--<div>Angular seed app: v-->
-    <!--<app-version></app-version>-->
-  <!--</div>-->
-
-  <footer>
+<footer>
     cofferight 2016 &copy;
-  </footer>
+</footer>
 
-  <script src="vendor/angular/angular.js"></script>
-  <script src="vendor/angular-route/angular-route.js"></script>
-  <script src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
-  <script src="app.js"></script>
-  <script src="home/home.js"></script>
-  <script src="chat/chat.js"></script>
-  <script src="chat/chat-factory.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-  <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/angular-route/angular-route.js"></script>
+<script src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="app.js"></script>
+<script src="home/home.js"></script>
+<script src="chat/chat.js"></script>
+<script src="chat/chat-factory.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+<script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
 </body>
 </html>

@@ -1,8 +1,19 @@
-
 <section>
 
 
+    <div class="container">
+        <div class="row">
 
+            <div ng-repeat="argue in vm.argues" class="col-md-6">
+               <h2> {{argue.name}}</h2>
+                <img ng-src="images/{{argue.id}}.jpg">
+                <button class="btn-success btn-lg">{{argue.pov[0]}}</button>
+                <button class="btn-danger btn-lg">{{argue.pov[1]}}</button>
+            </div>
 
+        </div>
+    </div>
 
 </section>
+
+
