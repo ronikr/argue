@@ -1,21 +1,20 @@
+(function () {
+    'use strict';
+    var module = angular.module('myApp.home', ['ngRoute']);
 
-(function(){
-  'use strict';
-  var module = angular.module('myApp.home', ['ngRoute']);
-
-  module.config(function($routeProvider) {
-    $routeProvider.when('/home', {
-      controller: 'HomeCtrl as vm',
-      templateUrl: 'home/home.html'
+    module.config(function ($routeProvider) {
+        $routeProvider.when('/home', {
+            controller: 'HomeCtrl as vm',
+            templateUrl: 'home/home.html'
+        });
     });
-  });
 
 
+    module.controller('HomeCtrl', function (ChatFactory) {
+        var argues = ChatFactory.getArgues();
+        console.log(argues);
 
-  module.controller('HomeCtrl', function() {
-
-
-  });
+    });
 
 })();
 
