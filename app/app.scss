@@ -1,3 +1,4 @@
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -28,12 +29,14 @@
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   text-align: center;
   width: 100%;
 
 }
+
+
 
 @import "chat/chat";
 @import "home/home.css";
