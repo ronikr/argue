@@ -1,6 +1,5 @@
 <section>
 
-
     <div class="container">
         <div class="row">
 
@@ -10,8 +9,10 @@
                     <img ng-src="images/{{argue.id}}.jpg">
 
                     <div class="povBtn">
-                        <button class="btn-success btn-lg">{{argue.pov[0]}}</button>
-                        <button class="btn-danger btn-lg">{{argue.pov[1]}}</button>
+                        <button class="btn-success btn-lg" ng-click="vm.povClicked(argue.pov[0])">{{argue.pov[0]}}
+                        </button>
+                        <button class="btn-danger btn-lg" ng-click="vm.povClicked(argue.pov[1])">{{argue.pov[1]}}
+                        </button>
                     </div>
                 </div>
 

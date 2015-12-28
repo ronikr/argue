@@ -1,11 +1,8 @@
 <section>
 
-    <form ng-hide="vm.hasNick" ng-submit="vm.setNick()">
-        Nickname? <input type="text" ng-model="vm.nick" required/>
-        <button type="submit">Thats Me!</button>
-    </form>
 
-    <div ng-show="vm.hasNick">
+
+    <div >
         <div class="historyChat">
             <p ng-repeat="msg in vm.msgs">
                 <span class="msgBy">{{msg.by}}:</span>
