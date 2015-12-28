@@ -12,21 +12,23 @@
 
     module.controller('ChatCtrl', function (ChatFactory) {
 
-        this.currentPov = ChatFactory.currentPov;
-        console.log('chat',this.currentPov);
-        this.nick = null;
+        this.currentPov = ChatFactory.currPov();
+        //console.log('chat',this.currentPov);
+
+
+        //this.currentPov = null;
         this.hasNick = false;
         this.msgs = ChatFactory.query();
-        this.newMsg = {txt: ''};
+        this.newMsg = {txt: '', by: this.currentPov};
 
         this.sendMsg = function () {
             ChatFactory.send(this.newMsg);
-            this.newMsg = {txt: '', by: this.nick};
+            this.newMsg = {txt: '', by: this.currentPov};
         };
         this.setNick = function () {
-            if (!this.nick) return;
+            if (!this.currentPov) return;
             this.hasNick = true;
-            this.newMsg.by = this.nick;
+            this.newMsg.by = this.currentPov;
         }
     });
 })();
