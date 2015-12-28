@@ -13,7 +13,7 @@
 
 
   module.controller('HomeCtrl', function() {
-    this.pet  = {id: 123, name: 'Charli124', desc: 'lorem ipsum', humanYearsFactor: 6};
+
 
   });
 
