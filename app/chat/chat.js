@@ -19,7 +19,7 @@
         this.sendMsg = function () {
           ChatFactory.send(this.newMsg);
           this.newMsg = {txt: '', by: this.nick};
-        }
+        };
         this.setNick = function () {
           if (!this.nick) return;
           this.hasNick = true;
