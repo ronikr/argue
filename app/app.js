@@ -4,10 +4,11 @@
 angular.module('myApp', [
   'ngRoute',
   'ui.bootstrap',
-  'myApp.view1',
+  'myApp.home',
   'myApp.chat',
   'myApp.version'
 ])
+
 .config(function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 });
