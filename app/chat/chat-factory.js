@@ -4,6 +4,35 @@
     module.factory('ChatFactory', function ($rootScope) {
 
         var msgs = [];
+        var argues = [
+
+            {
+                id: 1,
+                name: 'Politics2',
+                pov: ['Left', 'Right']
+
+            },
+            {
+                id: 2,
+                name: 'Legalization of weed',
+                pov: ['For', 'Against']
+
+            },
+            {
+                id: 3,
+                name: 'Who is the master of server',
+                pov: ['Riki Balbua', 'Gaby Zraya']
+
+            },
+            {
+                id: 4,
+                name: 'Soda in the Moda?',
+                pov: ['Yes', 'No']
+
+            }
+        ];
+
+
 
         var PUBNUB_chat = PUBNUB.init({
             publish_key: 'pub-c-0f682cbc-a4b7-4b20-9d6a-348cbf350aed',
@@ -20,6 +49,10 @@
         });
 
         return {
+            getArgues: function (){
+                return argues;
+            },
+
             query: function () {
                 return msgs;
             },
