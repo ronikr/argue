@@ -8,7 +8,7 @@
 
             {
                 id: 1,
-                name: 'Politics2',
+                name: 'Politics',
                 pov: ['Left', 'Right']
 
             },
