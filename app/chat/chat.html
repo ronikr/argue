@@ -1,0 +1,33 @@
+<section>
+
+    <form ng-hide="vm.hasNick" ng-submit="vm.setNick()">
+        Nickname? <input type="text" ng-model="vm.nick" required/>
+        <button type="submit">Thats Me!</button>
+    </form>
+
+    <div ng-show="vm.hasNick">
+        <div class="historyChat">
+            <p ng-repeat="msg in vm.msgs">
+                <span class="msgBy">{{msg.by}}:</span>
+                <span>{{msg.txt}}</span>
+            </p>
+        </div>
+
+
+        <form class="form-inline" ng-submit="vm.sendMsg()">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">{{vm.nick}}</div>
+                    <input id="txtMsg" required class="form-control txt-msg" placeholder="Your msg here Baya" type="text" ng-model="vm.newMsg.txt"/>
+                    <div class="input-group-addon"> &gt; </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+
+
+
+    </div>
+
+
+</section>
