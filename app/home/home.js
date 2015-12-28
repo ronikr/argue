@@ -11,8 +11,8 @@
 
 
     module.controller('HomeCtrl', function (ChatFactory) {
-        var argues = ChatFactory.getArgues();
-        console.log(argues);
+       this.argues = ChatFactory.getArgues();
+        console.log(this.argues);
 
     });
 
