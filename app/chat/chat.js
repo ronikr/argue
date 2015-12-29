@@ -18,7 +18,9 @@
         this.currentPov = ChatFactory.currPov();
         //console.log('chat',this.currentPov);
 
+
         this.currentArgue = ChatFactory.currArgue();
+
         //this.currentPov = null;
         this.hasNick = false;
         this.msgs = ChatFactory.query();
