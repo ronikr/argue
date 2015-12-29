@@ -14,11 +14,13 @@
 
       this.argues = ChatFactory.getArgues();
 
-        console.log(this.argues);
+        //console.log(this.argues);
+
 
         this.povClicked = function(pov){
             ChatFactory.setPov(pov);
-            console.log(pov);
+            //console.log('homeCtrl', pov);
+
         };
 
     });

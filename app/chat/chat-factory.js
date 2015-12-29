@@ -51,10 +51,17 @@
             setPov: function (pov) {
                 currentPov = pov;
                 console.log('factory',currentPov);
+
+
             },
+
             getArgues: function () {
                 return argues;
 
+            },
+
+            currPov: function (){
+                return currentPov;
             },
 
             query: function () {
