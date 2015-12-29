@@ -51,10 +51,10 @@
         return {
             setPov: function (pov) {
                 currentPov = pov;
-                console.log('factory',currentPov);
-
+                console.log('factory', currentPov);
 
             },
+
             setArgue: function (argue) {
                 currentArgue = argue;
 
@@ -66,11 +66,11 @@
 
             },
 
-            currPov: function (){
+            currPov: function () {
                 return currentPov;
             },
 
-            currArgue: function (){
+            currArgue: function () {
                 return currentArgue;
             },
 
@@ -83,6 +83,7 @@
                     channel: 'coding-academy-chat',
                     message: msg
                 });
+
             }
 
 
