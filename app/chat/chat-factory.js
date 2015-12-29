@@ -3,6 +3,7 @@
     var module = angular.module('myApp.chat');
     module.factory('ChatFactory', function ($rootScope) {
         var currentPov = '';
+        var currentArgue = '';
         var msgs = [];
         var argues = [
 
@@ -54,6 +55,11 @@
 
 
             },
+            setArgue: function (argue) {
+                currentArgue = argue;
+
+
+            },
 
             getArgues: function () {
                 return argues;
@@ -62,6 +68,10 @@
 
             currPov: function (){
                 return currentPov;
+            },
+
+            currArgue: function (){
+                return currentArgue;
             },
 
             query: function () {
