@@ -2,8 +2,10 @@
     'use strict';
     var module = angular.module('myApp.chat');
     module.factory('ChatFactory', function ($rootScope) {
-        var currentPov = '';
-        var currentArgue = {};
+        var currentPov = null;
+        var currentArgue = {name: 'temp'};
+        var currentChannel = null;
+        var argueStarted = false;
         var msgs = [];
         var argues = [
 
@@ -40,39 +42,54 @@
         });
 
         // Subscribe to the demo_tutorial channel
-        PUBNUB_chat.subscribe({
-            channel: 'coding-academy-chat',
-            message: function (msg) {
-                msgs.push(msg);
-                $rootScope.$apply();
-            }
-        });
+
 
         return {
 
-            setPov: function (pov) {
-                currentPov = pov;
-                console.log('factory', currentPov);
 
-            },
-
-            setArgue: function (argue) {
+            setDebate: function (argue, pov) {
                 currentArgue = argue;
-                //channel = currentArgue.name;
+                currentPov = pov;
 
+
+                currentChannel = 'argue-' + argue.id;
+
+                function sendArrivalMsg() {
+                    PUBNUB_chat.publish({
+                        channel: currentChannel,
+                        message: {txt: 'DebateJoined'}
+                    });
+                }
+
+                sendArrivalMsg();
+                PUBNUB_chat.subscribe({
+                    channel: currentChannel,
+                    message: function (msg) {
+                        if (!argueStarted) {
+                            sendArrivalMsg();
+                            argueStarted = true;
+                        } else if (msg.txt !== 'DebateJoined') {
+                            msgs.push(msg);
+                        }
+
+                        $rootScope.$apply();
+                    }
+                });
 
             },
 
             getArgues: function () {
                 return argues;
-
+            },
+            isStarted : function () {
+              return argueStarted;
             },
 
-            currPov: function () {
+            currPov: function (){
                 return currentPov;
             },
 
-            currArgue: function () {
+            currArgue: function (){
                 return currentArgue;
             },
 
@@ -80,12 +97,11 @@
                 return msgs;
             },
             send: function (msg) {
-                console.log('Sending: ', msg);
+                //console.log('Sending: ', msg);
                 PUBNUB_chat.publish({
-                    channel: 'coding-academy-chat',
+                    channel: currentChannel,
                     message: msg
                 });
-
             }
 
 

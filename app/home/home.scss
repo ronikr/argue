@@ -11,12 +11,17 @@
   }
 }
 
-
-
 img {
 
   @media all and (max-width: 500px) {
     width: 80%;
 
   }
+}
+
+.btn-0 {
+  background-color: #1b6d85;
+}
+.btn-1 {
+  background-color:#c0a16b;
 }

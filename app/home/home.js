@@ -10,7 +10,7 @@
     });
 
 
-    module.controller('HomeCtrl', function (ChatFactory , $routeParams) {
+    module.controller('HomeCtrl', function (ChatFactory , $routeParams, $location) {
 
       this.argues = ChatFactory.getArgues();
 
@@ -18,10 +18,8 @@
 
 
         this.povClicked = function(pov,argue){
-            ChatFactory.setPov(pov);
-            ChatFactory.setArgue(argue);
-            window.location.assign("#/chat/");
-            //console.log('homeCtrl', pov);
+            ChatFactory.setDebate(argue, pov);
+            $location.path("chat");
 
         };
 
