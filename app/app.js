@@ -6,6 +6,7 @@ angular.module('myApp', [
   'ui.bootstrap',
   'myApp.home',
   'myApp.chat',
+  'myApp.argue',
   'myApp.version'
 ])
 

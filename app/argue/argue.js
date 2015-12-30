@@ -9,4 +9,15 @@
             controller: 'ArgueCtrl as vm'
         });
     });
+    module.controller('ArgueCtrl', function (ChatFactory, $routeParams, $location) {
+        this.argue = ChatFactory.currArgue();
+
+        var argue = this.argue;
+        this.povClicked = function (pov) {
+            ChatFactory.setDebate(argue, pov);
+            $location.path("chat");
+
+        };
+
+    });
 })();

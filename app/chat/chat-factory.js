@@ -46,7 +46,9 @@
 
         return {
 
-
+            setArgue: function (argue) {
+                currentArgue = argue;
+            },
             setDebate: function (argue, pov) {
                 currentArgue = argue;
                 currentPov = pov;
@@ -81,15 +83,15 @@
             getArgues: function () {
                 return argues;
             },
-            isStarted : function () {
-              return argueStarted;
+            isStarted: function () {
+                return argueStarted;
             },
 
-            currPov: function (){
+            currPov: function () {
                 return currentPov;
             },
 
-            currArgue: function (){
+            currArgue: function () {
                 return currentArgue;
             },
 

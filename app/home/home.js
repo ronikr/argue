@@ -10,18 +10,17 @@
     });
 
 
-    module.controller('HomeCtrl', function (ChatFactory , $routeParams, $location) {
+    module.controller('HomeCtrl', function (ChatFactory, $routeParams, $location) {
 
-      this.argues = ChatFactory.getArgues();
+        this.argues = ChatFactory.getArgues();
 
         //console.log(this.argues);
-
-
-        this.povClicked = function(pov,argue){
-            ChatFactory.setDebate(argue, pov);
-            $location.path("chat");
-
+        this.argueClicked = function (argue) {
+            ChatFactory.setArgue(argue);
+            $location.path("argue");
         };
+
+
 
     });
 
