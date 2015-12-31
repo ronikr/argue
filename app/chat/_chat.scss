@@ -7,8 +7,11 @@ footer {
 .historyChat {
   background-color: #1b6d85;
   color:white;
-  min-height: 300px;
+  //min-height: 300px;
+  //max-height: 400px;
+  height: 300px;
   padding:20px;
+  overflow: scroll;
 }
 
 .msgBy {

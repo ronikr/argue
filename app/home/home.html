@@ -8,6 +8,7 @@
         </div>
 
 
+
         <div class="row">
 
             <div ng-repeat="argue in vm.argues | filter: searchArgue" class="col-md-6">
@@ -16,8 +17,7 @@
                     <img ng-src="images/{{argue.id}}.jpg">
 
                     <div class="povBtn">
-                        <!--<button ng-repeat="pov in argue.pov" class="btn btn-lg" ng-class="'btn-'+$index" ng-click="vm.povClicked(pov,argue)">{{pov}}-->
-                        <!--</button>-->
+
                         <button class="btn-primary btn-lg" ng-click="vm.argueClicked(argue)">Argue Now!
                         </button>
                     </div>

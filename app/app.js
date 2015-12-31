@@ -7,9 +7,11 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.chat',
   'myApp.argue',
-  'myApp.version'
+  'myApp.version',
+ 'ngAnimate'
 ])
 
 .config(function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 });
+
