@@ -47,7 +47,7 @@
         var botMsg = {};
         this.argueBot = $interval(function () {
             msgs = ChatFactory.query();
-            if (msgs.length % 4 === 0 && msgs.length !==0) {
+            if (msgs.length % 4 === 0 && msgs.length !== 0) {
                 botMsg = {
                     txt: ChatFactory.getRandomMsg(),
                     by: 'Argument Referee'
@@ -56,11 +56,9 @@
             }
         }, 3000);
 
+        var hello = $('.historyChat');
+        hello[0].scrollTop = hello[0].scrollHeight;
+        console.log(hello);
 
-        //this.setNick = function () {
-        //    if (!this.currentPov) return;
-        //    this.hasNick = true;
-        //    this.newMsg.by = this.currentPov;
-        //}
     });
 })();
