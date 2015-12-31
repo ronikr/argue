@@ -1,0 +1,29 @@
+
+.btn-0 {
+  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
+  background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));
+  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
+  background-repeat: repeat-x;
+  border-color: #3e8f3e;
+
+  &:hover {
+    background-color: #419641;
+    background-position: 0 -15px;
+  }
+}
+
+
+.btn-1 {
+  background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+  background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));
+  background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
+  background-repeat: repeat-x;
+  border-color: #b92c28;
+
+  &:hover {
+    background-color: #c12e2a;
+    background-position: 0 -15px;
+  }
+}
