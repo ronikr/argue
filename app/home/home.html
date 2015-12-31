@@ -1,9 +1,16 @@
 <section>
 
     <div class="container">
+
+        <div class="argueSearchBox">
+            <label for="searchArgue">Search an argument:</label>
+            <input type="text" id="searchArgue" ng-model="searchArgue">
+        </div>
+
+
         <div class="row">
 
-            <div ng-repeat="argue in vm.argues" class="col-md-6">
+            <div ng-repeat="argue in vm.argues | filter: searchArgue" class="col-md-6">
                 <div class="argument">
                     <h2> {{argue.name}}</h2>
                     <img ng-src="images/{{argue.id}}.jpg">
