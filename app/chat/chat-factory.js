@@ -3,7 +3,7 @@
     var module = angular.module('myApp.chat');
     module.factory('ChatFactory', function ($rootScope) {
         var currentPov = null;
-        var currentArgue = {name: 'temp'};
+        var currentArgue = null;
         var currentChannel = null;
         var argueStarted = false;
         var msgs = [];
@@ -35,7 +35,18 @@
             }
         ];
 
+        var argueRobot = [
+            "lol that's bullshit",
+            "that is such an uninformed thing to say",
+            "lame",
+            "guess what",
+            "stupid",
+            "what are you, a mormon?",
+            "any person with a minimum IQ knows that",
+            "you sound like my grandma",
+            "boring"
 
+        ];
         var PUBNUB_chat = PUBNUB.init({
             publish_key: 'pub-c-0f682cbc-a4b7-4b20-9d6a-348cbf350aed',
             subscribe_key: 'sub-c-f2f3429e-a97f-11e5-802b-02ee2ddab7fe'
@@ -104,6 +115,9 @@
                     channel: currentChannel,
                     message: msg
                 });
+            },
+            getRandomMsg: function () {
+                return argueRobot[randomInteger(0, argueRobot.length)] ;
             }
 
 
