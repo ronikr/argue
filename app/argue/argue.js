@@ -10,7 +10,14 @@
         });
     });
     module.controller('ArgueCtrl', function (ChatFactory, $routeParams, $location) {
+
+        //fix this duplication by refactoring
         this.argue = ChatFactory.currArgue();
+        this.currentArgue = ChatFactory.currArgue();
+
+        if (!this.currentArgue) {
+            $location.path('home');
+        }
 
         var argue = this.argue;
         this.povClicked = function (pov) {
