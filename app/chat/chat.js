@@ -21,6 +21,13 @@
             $location.path('home');
         }
 
+        ChatFactory.subscribe(function(){
+            var hello = document.querySelector('.historyChat');
+            hello.scrollTop = hello.scrollHeight;
+            console.log(hello);
+            $scope.$apply();
+        });
+
         $scope.$watch(function () {
             return ChatFactory.isStarted();
         }, function (newVal) {
@@ -56,9 +63,6 @@
             }
         }, 3000);
 
-        var hello = $('.historyChat');
-        hello[0].scrollTop = hello[0].scrollHeight;
-        console.log(hello);
 
     });
 })();

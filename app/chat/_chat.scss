@@ -1,4 +1,4 @@
-
+@import "../variables";
 
 footer {
   position: fixed;
@@ -6,17 +6,24 @@ footer {
 }
 
 .historyChat {
-  background-color: #1b6d85;
+  background-color: lighten($grey,10%);
   color:white;
   //min-height: 300px;
   //max-height: 400px;
   height: 300px;
   padding:20px;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .msgBy {
   color: greenyellow;
+}
+.referee {
+  color: $dark-accent1;
+}
+
+.me {
+  color: darkblue;
 }
 
 
