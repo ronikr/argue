@@ -1,7 +1,9 @@
+@import "../variables";
 
 .argument {
-  background-color: #00b3ee;
+  background-color: lighten($grey,20%);
     text-align: center;
+  border-radius: 2%;
   padding: 3px;
   margin: 10px;
 
