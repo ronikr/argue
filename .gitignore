@@ -5,9 +5,6 @@ bower_components/
 tmp
 .DS_Store
 .idea
-<<<<<<< HEAD
+*.css
 
-*.css
-=======
-*.css
->>>>>>> 0af383b30625b3405d175b88e31ac06b427bc528
+
