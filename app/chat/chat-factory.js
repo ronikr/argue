@@ -6,6 +6,7 @@
         var currentArgue = null;
         var currentChannel = null;
         var argueStarted = false;
+        var subscribeCallback = null;
         var msgs = [];
         var argues = [
 
@@ -84,8 +85,8 @@
                         } else if (msg.txt !== 'DebateJoined') {
                             msgs.push(msg);
                         }
-
-                        $rootScope.$apply();
+                        subscribeCallback();
+                        //$rootScope.$apply();
                     }
                 });
 
@@ -118,6 +119,9 @@
             },
             getRandomMsg: function () {
                 return argueRobot[randomInteger(0, argueRobot.length)] ;
+            },
+            subscribe : function(cb){
+                subscribeCallback = cb;
             }
 
 

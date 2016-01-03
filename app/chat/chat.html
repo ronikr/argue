@@ -5,7 +5,7 @@
     <div >
         <div class="historyChat">
             <p ng-repeat="msg in vm.msgs">
-                <span class="msgBy">{{msg.by}}:</span>
+                <span class="msgBy" ng-class="{'referee': msg.by =='Argument Referee', 'me': msg.by == vm.currentPov}">{{msg.by}}:</span>
                 <span>{{msg.txt}}</span>
             </p>
         </div>
@@ -19,7 +19,7 @@
                     <div class="input-group-addon"> &gt; </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" ng-disabled="!vm.argueStarted">Send</button>
+            <button type="submit" class="btn btn-primary btn-danger" ng-disabled="!vm.argueStarted">Send</button>
         </form>
 
 
