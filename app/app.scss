@@ -2,10 +2,13 @@
 @import "chat/chat";
 @import "home/home.css";
 @import "argue/argue.css";
+@import "variables";
+
 
 
 .header {
-  background-color: #2da7ff;
+  background-image: url("images/the_wall.jpg");
+  background-color: $grey;
 }
 
 
@@ -29,13 +32,16 @@ footer {
   width: 50%;
   margin: 10px auto 0 auto;
 
-
 }
 
-
-
+#siteHeadImg {
+  animation-duration: 0.7s;
+}
 
 .nav {
   display: inline;
+  a {
+    color: $dark-accent2;
+  }
 }
 
