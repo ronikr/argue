@@ -67,7 +67,7 @@
                 currentPov = pov;
 
                 currentChannel = 'argue-' + argue.id;
-
+console.log('channel = ',  currentChannel);
                 function sendArrivalMsg() {
                     PUBNUB_chat.publish({
                         channel: currentChannel,
