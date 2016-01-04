@@ -24,14 +24,14 @@
             },
             {
                 id: 3,
-                name: 'Who is the master of server',
-                pov: ['Riki Balbua', 'Gaby Zraya']
+                name: 'Veganism VS. Carnism',
+                pov: ['Veganism', 'Carnism']
 
             },
             {
                 id: 4,
-                name: 'Soda in the Moda?',
-                pov: ['Yes', 'No']
+                name: 'Android VS. Apple',
+                pov: ['Android', 'Apple']
 
             }
         ];
@@ -123,7 +123,6 @@
             subscribe : function(cb){
                 subscribeCallback = cb;
             }
-
 
         }
 
