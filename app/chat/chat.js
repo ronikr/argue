@@ -21,9 +21,12 @@
             $location.path('home');
         }
 
-        ChatFactory.subscribe(function(){
+        ChatFactory.subscribe(function () {
             var hello = document.querySelector('.historyChat');
             hello.scrollTop = hello.scrollHeight;
+
+            //console.log(hello);
+
             $scope.$apply();
         });
 
@@ -33,7 +36,6 @@
             console.log('isStarted watch: ', newVal);
             that.argueStarted = newVal;
         });
-
 
 
         this.msgs = ChatFactory.query();
@@ -48,12 +50,14 @@
         var botMsg = {};
         this.argueBot = $interval(function () {
             msgs = ChatFactory.query();
-            if (msgs.length % 4 === 0 && msgs.length !== 0) {
-                console.log('msgs length and the % ',msgs.length,' ',msgs.length%4);
+
+            if (msgs.length % 4 === 0 && msgs.length !== 0 && msgs[msgs.length - 1].by !== 'Argument Referee') {
+
                 botMsg = {
                     txt: ChatFactory.getRandomMsg(),
                     by: 'Argument Referee'
                 };
+
                 ChatFactory.send(botMsg);
             }
         }, 3000);
