@@ -35,6 +35,7 @@ describe('myApp.chat module', function() {
       expect(chatCtrl.hasNick).toBeFalsy();
       chatCtrl.setNick('Moshe');
       expect(chatCtrl.hasNick).toBeFalsy();
+
     }));
 
  });
