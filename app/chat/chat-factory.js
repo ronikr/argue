@@ -60,6 +60,7 @@
 
             setArgue: function (argue) {
                 currentArgue = argue;
+                //sessionStorage.argue = JSON.stringify(argue);
             },
             setDebate: function (argue, pov) {
                 currentArgue = argue;
@@ -95,6 +96,12 @@
             getArgues: function () {
                 return argues;
             },
+            getArgueById: function (argueId) {
+                var argueMatch = argues.filter(function (argue) {
+                    return argue.id == argueId;
+                });
+                return argueMatch[0];
+            },
             isStarted: function () {
                 return argueStarted;
             },
@@ -104,6 +111,9 @@
             },
 
             currArgue: function () {
+                //if (!currentArgue) {
+                //    currentArgue = JSON.parse(sessionStorage.argue);
+                //}
                 return currentArgue;
             },
 
@@ -118,9 +128,9 @@
                 });
             },
             getRandomMsg: function () {
-                return argueBot[randomInteger(0, argueBot.length)] ;
+                return argueBot[randomInteger(0, argueBot.length)];
             },
-            subscribe : function(cb){
+            subscribe: function (cb) {
                 subscribeCallback = cb;
             }
 
