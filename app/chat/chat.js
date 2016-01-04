@@ -24,6 +24,7 @@
         ChatFactory.subscribe(function () {
             var hello = document.querySelector('.historyChat');
             hello.scrollTop = hello.scrollHeight;
+            //console.log('from chat controller - what is the channel? ',)
 
             //console.log(hello);
 

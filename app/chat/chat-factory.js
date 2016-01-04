@@ -66,7 +66,6 @@
                 currentArgue = argue;
                 currentPov = pov;
 
-
                 currentChannel = 'argue-' + argue.id;
 
                 function sendArrivalMsg() {
