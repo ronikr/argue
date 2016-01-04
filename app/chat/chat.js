@@ -24,7 +24,6 @@
         ChatFactory.subscribe(function(){
             var hello = document.querySelector('.historyChat');
             hello.scrollTop = hello.scrollHeight;
-            console.log(hello);
             $scope.$apply();
         });
 
@@ -36,15 +35,10 @@
         });
 
 
-        //console.log('chat',this.currentPov);
-        //this.currentPov = null;
-        //this.hasNick = false;
+
         this.msgs = ChatFactory.query();
         this.newMsg = {txt: '', by: this.currentPov};
-        //this.botMsg = {
-        //    txt: ChatFactory.getRandomMsg(),
-        //    by: 'Argument Referee'
-        //};
+
 
         this.sendMsg = function () {
             ChatFactory.send(this.newMsg);
@@ -55,6 +49,7 @@
         this.argueBot = $interval(function () {
             msgs = ChatFactory.query();
             if (msgs.length % 4 === 0 && msgs.length !== 0) {
+                console.log('msgs length and the % ',msgs.length,' ',msgs.length%4);
                 botMsg = {
                     txt: ChatFactory.getRandomMsg(),
                     by: 'Argument Referee'

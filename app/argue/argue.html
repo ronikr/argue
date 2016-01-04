@@ -1,11 +1,11 @@
 <section>
 
     <div class="argument">
-        <h2> {{vm.argue.name}}</h2>
-        <img ng-src="images/{{vm.argue.id}}.jpg">
+        <h2> {{vm.currentArgue.name}}</h2>
+        <img ng-src="images/{{vm.currentArgue.id}}.jpg">
 
         <div class="povBtn">
-            <button ng-repeat="pov in vm.argue.pov" class="btn btn-lg" ng-class="'btn-'+$index" ng-click="vm.povClicked(pov)">{{pov}}
+            <button ng-repeat="pov in vm.currentArgue.pov" class="btn btn-lg" ng-class="'btn-'+$index" ng-click="vm.povClicked(pov)">{{pov}}
             </button>
         </div>
     </div>

@@ -14,7 +14,6 @@
 
         this.argues = ChatFactory.getArgues();
 
-        //console.log(this.argues);
         this.argueClicked = function (argue) {
             ChatFactory.setArgue(argue);
             $location.path("argue");

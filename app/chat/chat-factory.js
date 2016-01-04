@@ -36,7 +36,7 @@
             }
         ];
 
-        var argueRobot = [
+        var argueBot = [
             "lol that's bullshit",
             "that is such an uninformed thing to say",
             "lame",
@@ -118,7 +118,7 @@
                 });
             },
             getRandomMsg: function () {
-                return argueRobot[randomInteger(0, argueRobot.length)] ;
+                return argueBot[randomInteger(0, argueBot.length)] ;
             },
             subscribe : function(cb){
                 subscribeCallback = cb;

@@ -11,15 +11,13 @@
     });
     module.controller('ArgueCtrl', function (ChatFactory, $routeParams, $location) {
 
-        //fix this duplication by refactoring
-        this.argue = ChatFactory.currArgue();
         this.currentArgue = ChatFactory.currArgue();
 
         if (!this.currentArgue) {
             $location.path('home');
         }
 
-        var argue = this.argue;
+        var argue = this.currentArgue;
         this.povClicked = function (pov) {
             ChatFactory.setDebate(argue, pov);
             $location.path("chat");
