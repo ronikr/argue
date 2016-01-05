@@ -5,7 +5,7 @@
         var currentPov = null;
         var currentArgue = null;
         var currentChannel = null;
-        var argueStarted = false;
+        var argueStarted = true;
         var subscribeCallback = null;
         //var msgs = [];
         var argues = [
@@ -86,7 +86,7 @@
 
                         if (msg.txt === 'DebateJoined' && msg.by !== currentPov) {
                             sendArrivalMsg();
-                            argueStarted = true;
+                            //argueStarted = true;
                         } else if (msg.txt !== 'DebateJoined') {
                            currentArgue.msgs.push(msg);
 
