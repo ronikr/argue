@@ -7,31 +7,35 @@
         var currentChannel = null;
         var argueStarted = false;
         var subscribeCallback = null;
-        var msgs = [];
+        //var msgs = [];
         var argues = [
 
             {
                 id: 1,
                 name: 'Politics',
-                pov: ['Left', 'Right']
+                pov: ['Left', 'Right'],
+                msgs: []
 
             },
             {
                 id: 2,
                 name: 'Legalization of weed',
-                pov: ['For', 'Against']
+                pov: ['For', 'Against'],
+                msgs: []
 
             },
             {
                 id: 3,
                 name: 'Veganism VS. Carnism',
-                pov: ['Veganism', 'Carnism']
+                pov: ['Veganism', 'Carnism'],
+                msgs: []
 
             },
             {
                 id: 4,
                 name: 'Android VS. Apple',
-                pov: ['Android', 'Apple']
+                pov: ['Android', 'Apple'],
+                msgs: []
 
             }
         ];
@@ -65,6 +69,7 @@
             setDebate: function (argue, pov) {
                 currentArgue = argue;
                 currentPov = pov;
+
                 currentChannel = 'argue-' + argue.id;
                 console.log('channel = ', currentChannel);
                 function sendArrivalMsg() {
@@ -78,14 +83,15 @@
                     channel: currentChannel,
                     message: function (msg) {
 
-                        if (!argueStarted && msg.txt === 'DebateJoined' && msg.by !== currentPov) {
+
+                        if (msg.txt === 'DebateJoined' && msg.by !== currentPov) {
                             sendArrivalMsg();
                             argueStarted = true;
-                        } else if (msg.txt !== 'DebateJoined'){
-                            msgs.push(msg);
+                        } else if (msg.txt !== 'DebateJoined') {
+                           currentArgue.msgs.push(msg);
+
                         }
                         subscribeCallback();
-                        //$rootScope.$apply();
                     }
                 });
                 sendArrivalMsg();
@@ -117,7 +123,7 @@
             },
 
             query: function () {
-                return msgs;
+                return currentArgue.msgs;
             },
             send: function (msg) {
                 //console.log('Sending: ', msg);
