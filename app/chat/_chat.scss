@@ -29,3 +29,8 @@ footer {
   min-width: 400px;
 }
 
+@media (max-width: 500px) {
+   .historyChat {
+   max-width:95%;
+  }
+}

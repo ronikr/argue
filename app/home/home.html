@@ -4,22 +4,22 @@
 
         <div class="argueSearchBox">
             <label for="searchArgue"></label>
-            <input type="text" id="searchArgue" ng-model="searchArgue" class="input-lg" placeholder="Search an argument">
+            <input type="text" id="searchArgue" ng-model="searchArgue" class="input-lg"
+                   placeholder="Search an argument">
         </div>
-
-
 
 
         <div class="row">
 
-            <div ng-repeat="argue in vm.argues | filter: searchArgue" class="col-md-6">
+            <div ng-repeat="argue in vm.argues | filter: searchArgue" class="col-md-6 animate-repeat">
                 <div class="argument">
                     <h2> {{argue.name}}</h2>
                     <img ng-src="images/{{argue.id}}.jpg">
 
                     <div class="povBtn">
 
-                        <a href="#/argue/{{argue.id}}" class=" btn-primary btn-lg " ng-click="vm.argueClicked(argue)">Argue Now</a>
+                        <a href="#/argue/{{argue.id}}" class=" btn-primary btn-lg " ng-click="vm.argueClicked(argue)">Argue
+                            Now</a>
                     </div>
                 </div>
 

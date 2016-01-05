@@ -66,28 +66,29 @@
                 currentArgue = argue;
                 currentPov = pov;
                 currentChannel = 'argue-' + argue.id;
-console.log('channel = ',  currentChannel);
+                console.log('channel = ', currentChannel);
                 function sendArrivalMsg() {
                     PUBNUB_chat.publish({
                         channel: currentChannel,
-                        message: {txt: 'DebateJoined'}
+                        message: {txt: 'DebateJoined', by: currentPov}
                     });
                 }
 
-                sendArrivalMsg();
                 PUBNUB_chat.subscribe({
                     channel: currentChannel,
                     message: function (msg) {
-                        if (!argueStarted) {
+
+                        if (!argueStarted && msg.txt === 'DebateJoined' && msg.by !== currentPov) {
                             sendArrivalMsg();
                             argueStarted = true;
-                        } else if (msg.txt !== 'DebateJoined') {
+                        } else if (msg.txt !== 'DebateJoined'){
                             msgs.push(msg);
                         }
                         subscribeCallback();
                         //$rootScope.$apply();
                     }
                 });
+                sendArrivalMsg();
 
             },
 
@@ -131,11 +132,8 @@ console.log('channel = ',  currentChannel);
             subscribe: function (cb) {
                 subscribeCallback = cb;
             }
-
         }
 
-
     });
-
 
 })();

@@ -57,7 +57,8 @@
                     txt: ChatFactory.getRandomMsg(),
                     by: 'Argument Referee'
                 };
-
+                console.log('msg length = ', msgs.length);
+                console.log('msg by: ', msgs[msgs.length - 1].by);
                 ChatFactory.send(botMsg);
             }
         }, 3000);
