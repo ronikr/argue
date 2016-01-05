@@ -19,12 +19,6 @@
         if (argueId) {
             this.currentArgue = ChatFactory.getArgueById(argueId);
         }
-        //else {
-        //    this.job = {
-        //        name: '',
-        //        isFullTime: true
-        //    }
-        //}
 
 
         if (!this.currentArgue) {

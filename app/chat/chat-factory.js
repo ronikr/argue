@@ -7,31 +7,35 @@
         var currentChannel = null;
         var argueStarted = false;
         var subscribeCallback = null;
-        var msgs = [];
+        //var msgs = [];
         var argues = [
 
             {
                 id: 1,
                 name: 'Politics',
-                pov: ['Left', 'Right']
+                pov: ['Left', 'Right'],
+                msgs: []
 
             },
             {
                 id: 2,
                 name: 'Legalization of weed',
-                pov: ['For', 'Against']
+                pov: ['For', 'Against'],
+                msgs: []
 
             },
             {
                 id: 3,
                 name: 'Veganism VS. Carnism',
-                pov: ['Veganism', 'Carnism']
+                pov: ['Veganism', 'Carnism'],
+                msgs: []
 
             },
             {
                 id: 4,
                 name: 'Android VS. Apple',
-                pov: ['Android', 'Apple']
+                pov: ['Android', 'Apple'],
+                msgs: []
 
             }
         ];
@@ -67,28 +71,28 @@
                 currentPov = pov;
 
                 currentChannel = 'argue-' + argue.id;
-console.log('channel = ',  currentChannel);
+                console.log('channel = ', currentChannel);
                 function sendArrivalMsg() {
                     PUBNUB_chat.publish({
                         channel: currentChannel,
-                        message: {txt: 'DebateJoined'}
+                        message: {txt: 'DebateJoined', by: currentPov}
                     });
                 }
 
-                sendArrivalMsg();
                 PUBNUB_chat.subscribe({
                     channel: currentChannel,
                     message: function (msg) {
-                        if (!argueStarted) {
+
+                        if (msg.txt === 'DebateJoined' && msg.by !== currentPov) {
                             sendArrivalMsg();
                             argueStarted = true;
                         } else if (msg.txt !== 'DebateJoined') {
-                            msgs.push(msg);
+                           currentArgue.msgs.push(msg);
                         }
                         subscribeCallback();
-                        //$rootScope.$apply();
                     }
                 });
+                sendArrivalMsg();
 
             },
 
@@ -117,7 +121,7 @@ console.log('channel = ',  currentChannel);
             },
 
             query: function () {
-                return msgs;
+                return currentArgue.msgs;
             },
             send: function (msg) {
                 //console.log('Sending: ', msg);
