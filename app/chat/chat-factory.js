@@ -14,21 +14,37 @@
                 id: 1,
                 name: 'Politics',
                 pov: ['Left', 'Right'],
-                msgs: []
+                msgs: [],
+                argueBot: ["ביבי בשלטון כבר 200 שנה! לא הגיע הזמן להחליף?",
+                    "מה השמאל הביא למדינה חוץ מפיגועים?",
+                    "פושעי אוסלו לדין!",
+                    "בסוף גם ככה יהיו פה שתי מדינות"
+                ]
 
             },
             {
                 id: 2,
                 name: 'Legalization of weed',
                 pov: ['For', 'Against'],
-                msgs: []
+                msgs: [],
+                argueBot: ["סחים הם אנשים משעממים לאללה!",
+                    "זה מה שאתם רוצים? חיילים מסטולים?",
+                    "מסמים קלים לקשים הדרך ממש קצרה",
+                    "לקנאביס יש סגולות רפואיות!",
+                    "הכל קונספירציה של חברת התרופות"
+                ]
 
             },
             {
                 id: 3,
                 name: 'Veganism VS. Carnism',
                 pov: ['Veganism', 'Carnism'],
-                msgs: []
+                msgs: [],
+                argueBot: ["בשר זה רצח!",
+                    "ירקות זה האוכל של האוכל",
+                    "מי אתם שתחליטו מי יחיה ומי ימות?",
+                    "הגוף האנושי צריך בי-12"
+                ]
 
             },
             {
@@ -40,18 +56,18 @@
             }
         ];
 
-        var argueBot = [
-            "lol that's bullshit",
-            "that is such an uninformed thing to say",
-            "lame",
-            "guess what",
-            "stupid",
-            "what are you, a mormon?",
-            "any person with a minimum IQ knows that",
-            "you sound like my grandma",
-            "boring"
-
-        ];
+        //var argueBot = [
+        //    "lol that's bullshit",
+        //    "that is such an uninformed thing to say",
+        //    "lame",
+        //    "guess what",
+        //    "stupid",
+        //    "what are you, a mormon?",
+        //    "any person with a minimum IQ knows that",
+        //    "you sound like my grandma",
+        //    "boring"
+        //
+        //];
         var PUBNUB_chat = PUBNUB.init({
             publish_key: 'pub-c-0f682cbc-a4b7-4b20-9d6a-348cbf350aed',
             subscribe_key: 'sub-c-f2f3429e-a97f-11e5-802b-02ee2ddab7fe'
@@ -88,7 +104,7 @@
                             sendArrivalMsg();
                             //argueStarted = true;
                         } else if (msg.txt !== 'DebateJoined') {
-                           currentArgue.msgs.push(msg);
+                            currentArgue.msgs.push(msg);
 
                         }
                         subscribeCallback();
@@ -133,7 +149,7 @@
                 });
             },
             getRandomMsg: function () {
-                return argueBot[randomInteger(0, argueBot.length)];
+                return currentArgue.argueBot[randomInteger(0, currentArgue.argueBot.length)];
             },
             subscribe: function (cb) {
                 subscribeCallback = cb;
