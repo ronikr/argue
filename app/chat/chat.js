@@ -49,11 +49,11 @@
         this.argueBot = $interval(function () {
             msgs = ChatFactory.query();
 
-            if (msgs.length % 5 === 0 && msgs.length !== 0 && msgs[msgs.length - 1].by !== 'Argument Referee') {
+            if (msgs.length % 5 === 0 && msgs.length !== 0 && msgs[msgs.length - 1].by !== 'הבורר') {
 
                 botMsg = {
                     txt: ChatFactory.getRandomMsg(),
-                    by: 'Argument Referee'
+                    by: 'הבורר'
                 };
                 console.log('msg length = ', msgs.length);
                 console.log('msg by: ', msgs[msgs.length - 1].by);

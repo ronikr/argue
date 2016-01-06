@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="myApp" class="no-js" >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
     <script src="vendor/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+<body >
 <audio autoplay>
     <source src="sound/glassBreak.mp3" type="audio/mpeg">
 </audio>
@@ -26,16 +26,20 @@
 
 </header>
 <ul class="nav nav-pills">
-    <li role="presentation"><a href="#/home">Home</a></li>
-
+    <li role="presentation"><a href="#/about">אודות</a></li>
+    <li role="presentation"><a href="#/home">בית</a></li>
 </ul>
 
 
 <div ng-view></div>
+<div class="footer">
+    <div class="container">
+        <p class="text-muted">cofferight 2016 &copy;</p>
 
-<footer>
-    cofferight 2016 &copy;
-</footer>
+    </div>
+</div>
+<!--<footer>-->
+<!--</footer>-->
 
 <script src="vendor/utils.js"></script>
 <script src="vendor/jquery/dist/jquery.js"></script>
@@ -45,6 +49,7 @@
 <script src="app.js"></script>
 <script src="home/home.js"></script>
 <script src="chat/chat.js"></script>
+<script src="about/about.js"></script>
 <script src="chat/chat-factory.js"></script>
 <script src="argue/argue.js"></script>
 <script src="components/version/version.js"></script>

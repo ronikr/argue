@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.chat',
   'myApp.argue',
+  'myApp.about',
   'myApp.version',
  'ngAnimate'
 ])
