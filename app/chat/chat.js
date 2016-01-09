@@ -21,6 +21,8 @@
             $location.path('home');
         }
 
+        //TODO enable smooth scrolling on chrome://flags/
+
         ChatFactory.subscribe(function () {
             var hello = document.querySelector('.historyChat');
             hello.scrollTop = hello.scrollHeight;
