@@ -19,11 +19,13 @@
 
         if (!this.currentArgue || !this.currentPov) {
             $location.path('home');
+            return;
         }
 
         //TODO enable smooth scrolling on chrome://flags/
 
-        ChatFactory.subscribe(function () {
+        ChatFactory.subscribe(function (msg) {
+            console.log('subs called: ', msg)
             var hello = document.querySelector('.historyChat');
             hello.scrollTop = hello.scrollHeight;
 

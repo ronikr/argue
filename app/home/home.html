@@ -4,14 +4,14 @@
 
         <div class="argueSearchBox">
             <label for="searchArgue"></label>
-            <input type="text" id="searchArgue" ng-model="searchArgue" class="input-lg"
+            <input type="text" id="searchArgue" ng-model="filter.name" class="input-lg"
                    placeholder="חפשו ויכוח">
         </div>
 
 
         <div class="row">
 
-            <div ng-repeat="argue in vm.argues | filter: searchArgue" class="col-md-6 animate-repeat" >
+            <div ng-repeat="argue in vm.argues | filter: {name: filter.name}" class="col-md-6 animate-repeat" >
                 <div class="argument">
                     <h2> {{argue.name}}</h2>
                     <img ng-src="images/{{argue.id}}.jpg">
