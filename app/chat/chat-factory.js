@@ -7,6 +7,7 @@
         var currentChannel = null;
         var argueStarted = true;
         var subscribeCallback = null;
+        var lastSentArrivalMsgAt = null;
         //var msgs = [];
         var argues = [
 
@@ -93,21 +94,22 @@
                         channel: currentChannel,
                         message: {txt: 'DebateJoined', by: currentPov}
                     });
+                    lastSentArrivalMsgAt = Date.now();
                 }
 
                 PUBNUB_chat.subscribe({
                     channel: currentChannel,
                     message: function (msg) {
+                        if (!msg) return;
 
-
-                        if (msg.txt === 'DebateJoined' && msg.by !== currentPov) {
+                        if (msg.txt === 'DebateJoined' && msg.by !== currentPov && Date.now() > lastSentArrivalMsgAt + 5000) {
                             sendArrivalMsg();
                             //argueStarted = true;
                         } else if (msg.txt !== 'DebateJoined') {
                             currentArgue.msgs.push(msg);
 
                         }
-                        subscribeCallback();
+                        subscribeCallback(msg);
                     }
                 });
                 sendArrivalMsg();
