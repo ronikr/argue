@@ -4,8 +4,9 @@
 <h1>{{vm.currentArgue.name}}</h1>
     <div >
         <div class="historyChat">
+            <p ng-show="vm.msgs == false" class="intro">{{vm.currentPov.intro}}...</p>
             <p ng-repeat="msg in vm.msgs">
-                <span class="msgBy" ng-class="{'referee': msg.by =='Argument Referee', 'me': msg.by == vm.currentPov}">{{msg.by}}:</span>
+                <span class="msgBy" ng-class="{'referee': msg.by =='Argument Referee', 'me': msg.by == vm.currentPov.name}">{{msg.by}}:</span>
                 <span>{{msg.txt}}</span>
             </p>
         </div>
@@ -14,7 +15,7 @@
         <form class="form-inline" ng-submit="vm.sendMsg()">
             <div class="form-group">
                 <div class="input-group">
-                    <div class="input-group-addon">{{vm.currentPov}}</div>
+                    <div class="input-group-addon">{{vm.currentPov.name}}</div>
                     <input id="txtMsg" required class="input-lg" placeholder="הקלידו כאן" type="text" ng-model="vm.newMsg.txt"/>
 
                 </div>

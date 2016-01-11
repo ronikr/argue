@@ -25,12 +25,19 @@ footer {
 }
 
 
-.txt-msg {
-  min-width: 400px;
+
+#txtMsg {
+  color: #000;
+  width: 100%;
 }
 
 @media (max-width: 500px) {
    .historyChat {
    max-width:95%;
   }
+}
+
+.intro {
+  font-size: 1.5em;
+  font-weight: bold;
 }

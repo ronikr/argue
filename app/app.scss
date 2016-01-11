@@ -1,4 +1,4 @@
-@import "chat/chat";
+@import "chat/chat.css";
 @import "home/home.css";
 @import "argue/argue.css";
 @import "variables";
@@ -81,10 +81,7 @@ body {
   color: #000;
 }
 
-#txtMsg {
-  color: #000;
-  width: 13em;
-}
+
 
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter,

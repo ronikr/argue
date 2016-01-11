@@ -41,12 +41,12 @@
 
 
         this.msgs = ChatFactory.query();
-        this.newMsg = {txt: '', by: this.currentPov};
+        this.newMsg = {txt: '', by: this.currentPov.name};
 
 
         this.sendMsg = function () {
             ChatFactory.send(this.newMsg);
-            this.newMsg = {txt: '', by: this.currentPov};
+            this.newMsg = {txt: '', by: this.currentPov.name};
         };
         var msgs = this.msgs;
         var botMsg = {};
