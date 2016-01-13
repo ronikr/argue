@@ -1,28 +1,33 @@
 <section>
 
 
-<h1>{{vm.currentArgue.name}}</h1>
-    <div >
+    <h1>{{vm.currentArgue.name}}</h1>
+
+    <div>
         <div class="historyChat">
             <p ng-show="vm.msgs == false" class="intro">{{vm.currentPov.intro}}...</p>
+
             <p ng-repeat="msg in vm.msgs">
-                <span class="msgBy" ng-class="{'referee': msg.by =='Argument Referee', 'me': msg.by == vm.currentPov.name}">{{msg.by}}:</span>
+                <span class="msgBy"
+                      ng-class="{'referee': msg.by =='Argument Referee', 'me': msg.by == vm.currentPov.name}">{{msg.by}}:</span>
                 <span>{{msg.txt}}</span>
             </p>
         </div>
 
 
         <form class="form-inline" ng-submit="vm.sendMsg()">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon">{{vm.currentPov.name}}</div>
-                    <input id="txtMsg" required class="input-lg" placeholder="הקלידו כאן" type="text" ng-model="vm.newMsg.txt"/>
+            <input type="hidden" autofocus="true"/>
 
-                </div>
+            <div class="cool-input">
+                <span class="povName">{{vm.currentPov.name}}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+                <input class="chatInput" type="text" required ng-model="vm.newMsg.txt" placeholder="הקלידו כאן"/>
+
             </div>
-            <button type="submit" class="btn btn-lg btn-danger" ng-disabled="!vm.argueStarted">שלח!</button>
-        </form>
+            <button type="submit" class="myBtn" ng-disabled="!vm.argueStarted">שלח!</button>
 
+
+        </form>
 
 
     </div>

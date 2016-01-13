@@ -14,8 +14,36 @@
     module.controller('ChatCtrl', function ($location, $scope, ChatFactory, $interval) {
 
         var that = this;
-        this.currentArgue = ChatFactory.currArgue();
-        this.currentPov = ChatFactory.currPov();
+        //this.currentArgue = ChatFactory.currArgue();
+        //this.currentPov = ChatFactory.currPov();
+
+        //*******************test data***************************8
+
+        this.currentArgue = {
+            id: 3,
+            name: 'צמחונות וטבעונות',
+            pov: [
+                {
+                    name: 'קרניבור',
+                    intro: 'מחכה להיפסטר חובב חסה'
+                },
+
+                {
+                    name: 'טבעוני',
+                    intro: 'מחכה לרוצח כבשים'
+                }
+            ],
+            msgs: [],
+            argueBot: ["בשר זה רצח!",
+                "ירקות זה האוכל של האוכל",
+                "מי אתם שתחליטו מי יחיה ומי ימות?",
+                "הגוף האנושי צריך בי-12"
+            ]
+
+        };
+        this.currentPov = {name: "קרניבור", intro: "מחכה להיפסטר חובב חסה"};
+
+        //*******************end of test data***************************8
 
         if (!this.currentArgue || !this.currentPov) {
             $location.path('home');

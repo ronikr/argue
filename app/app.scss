@@ -1,3 +1,4 @@
+@import "vendor/normalize.css/normalize.css";
 @import "chat/chat.css";
 @import "home/home.css";
 @import "argue/argue.css";
@@ -37,13 +38,34 @@ body {
 //
 //}
 
-.footer {
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  text-align: center;
   height: 60px;
-  //background-color: #f5f5f5;
+
+  .navChat {
+    text-align: center;
+    margin-top: 1em;
+    text-decoration: none;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline;
+      padding: 20px;
+    }
+    li:nth-child(-n+2) {
+      &::after {
+        position: relative;
+        right: 3%;
+        content: "|";
+      }
+    }
+
+  }
 }
 
 .siteHeadline {
@@ -63,25 +85,9 @@ body {
   animation-duration: 0.7s;
 }
 
-.nav {
-  display: inline;
-  direction: rtl;
-  float: right;
-  margin-top: 1em;
-
-  a {
-    color: $dark-accent2;
-    display: block;
-    background-color: lighten($grey, 20%);
-  }
-
-}
-
 #searchArgue {
   color: #000;
 }
-
-
 
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter,
