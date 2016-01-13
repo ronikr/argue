@@ -14,8 +14,8 @@
     module.controller('ChatCtrl', function ($location, $scope, ChatFactory, $interval) {
 
         var that = this;
-        //this.currentArgue = ChatFactory.currArgue();
-        //this.currentPov = ChatFactory.currPov();
+        this.currentArgue = ChatFactory.currArgue();
+        this.currentPov = ChatFactory.currPov();
 
         //*******************test data***************************8
 
