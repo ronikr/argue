@@ -17,33 +17,33 @@
         this.currentArgue = ChatFactory.currArgue();
         this.currentPov = ChatFactory.currPov();
 
-        //*******************test data***************************8
-
-        this.currentArgue = {
-            id: 3,
-            name: 'צמחונות וטבעונות',
-            pov: [
-                {
-                    name: 'קרניבור',
-                    intro: 'מחכה להיפסטר חובב חסה'
-                },
-
-                {
-                    name: 'טבעוני',
-                    intro: 'מחכה לרוצח כבשים'
-                }
-            ],
-            msgs: [],
-            argueBot: ["בשר זה רצח!",
-                "ירקות זה האוכל של האוכל",
-                "מי אתם שתחליטו מי יחיה ומי ימות?",
-                "הגוף האנושי צריך בי-12"
-            ]
-
-        };
-        this.currentPov = {name: "קרניבור", intro: "מחכה להיפסטר חובב חסה"};
-
-        //*******************end of test data***************************8
+        ////*******************test data***************************8
+        //
+        //this.currentArgue = {
+        //    id: 3,
+        //    name: 'צמחונות וטבעונות',
+        //    pov: [
+        //        {
+        //            name: 'קרניבור',
+        //            intro: 'מחכה להיפסטר חובב חסה'
+        //        },
+        //
+        //        {
+        //            name: 'טבעוני',
+        //            intro: 'מחכה לרוצח כבשים'
+        //        }
+        //    ],
+        //    msgs: [],
+        //    argueBot: ["בשר זה רצח!",
+        //        "ירקות זה האוכל של האוכל",
+        //        "מי אתם שתחליטו מי יחיה ומי ימות?",
+        //        "הגוף האנושי צריך בי-12"
+        //    ]
+        //
+        //};
+        //this.currentPov = {name: "קרניבור", intro: "מחכה להיפסטר חובב חסה"};
+        //
+        ////*******************end of test data***************************8
 
         if (!this.currentArgue || !this.currentPov) {
             $location.path('home');
@@ -81,7 +81,9 @@
         this.argueBot = $interval(function () {
             msgs = ChatFactory.query();
 
-            if (msgs.length % 5 === 0 && msgs.length !== 0 && msgs[msgs.length - 1].by !== 'הבורר') {
+            if (msgs.length % 5 === 0 && msgs.length >=8 && msgs[msgs.length - 1].by !== 'הבורר'
+                && msgs[msgs.length - 2].by !== 'הבורר' && msgs[msgs.length - 3].by !== 'הבורר'
+                && msgs[msgs.length - 4].by !== 'הבורר' && msgs[msgs.length - 5].by !== 'הבורר') {
 
                 botMsg = {
                     txt: ChatFactory.getRandomMsg(),
