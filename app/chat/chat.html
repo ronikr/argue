@@ -5,11 +5,11 @@
 
     <div>
         <div class="historyChat">
-            <p ng-show="vm.msgs == false" class="intro">{{vm.currentPov.intro}}...</p>
+            <p ng-show="vm.msgs.length === 0" class="intro">{{vm.currentPov.intro}}...</p>
 
             <p ng-repeat="msg in vm.msgs">
                 <span class="msgBy"
-                      ng-class="{'referee': msg.by =='הבורר', 'me': msg.by == vm.currentPov.name}">{{msg.by}}:</span>
+                      ng-class="{'referee': msg.by =='הבורר', 'me': msg.by === vm.currentPov.name}">{{msg.by}}:</span>
                 <span>{{msg.txt}}</span>
             </p>
         </div>

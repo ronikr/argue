@@ -23,11 +23,11 @@
 
         if (!this.currentArgue) {
             $location.path('home');
+            return;
         }
 
-        var argue = this.currentArgue;
         this.povClicked = function (pov) {
-            ChatFactory.setDebate(argue, pov);
+            ChatFactory.setDebate(this.currentArgue, pov);
             $location.path("chat");
 
         };

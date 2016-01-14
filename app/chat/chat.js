@@ -53,7 +53,7 @@
         //TODO enable smooth scrolling on chrome://flags/
 
         ChatFactory.subscribe(function (msg) {
-            console.log('subs called: ', msg)
+            console.log('subs called: ', msg);
             var hello = document.querySelector('.historyChat');
             hello.scrollTop = hello.scrollHeight;
 
