@@ -15,6 +15,12 @@ body {
   color: #fff;
   direction: rtl;
   margin-bottom: 60px;
+  //block from showing on IE
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .mainView {
+      display: none;
+    }
+  }
 }
 
 .header {
@@ -25,18 +31,18 @@ body {
   @media (max-width: 500px) {
     content: url("images/argueAboutMobile.png");
   }
-  //background-color: $grey;
-  //content: "";
 }
 
-//footer {
-//  position: fixed;
-//  bottom: 0;
-//  text-align: center;
-//  width: 100%;
-//
-//
-//}
+
+.justForExplorer {
+  display: none;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    display: block;
+    font-size: 3em;
+    text-align: center;
+    direction: ltr;
+  }
+}
 
 footer {
   position: absolute;
@@ -57,13 +63,13 @@ footer {
       display: inline;
       padding: 20px;
     }
-    li:nth-child(-n+2) {
-      &::after {
-        position: relative;
-        right: 3%;
-        content: "|";
-      }
-    }
+    //li:nth-child(-n+2) {
+    //  &::after {
+    //    position: relative;
+    //    right: 3%;
+    //    content: "|";
+    //  }
+    //}
 
   }
 }
@@ -71,7 +77,6 @@ footer {
 .siteHeadline {
   text-align: center;
   margin: 15px 15px;
-  //float: left;
 
 }
 

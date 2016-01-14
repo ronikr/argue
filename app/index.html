@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="vendor/css-animate/animate.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
     <script src="vendor/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body>
 <audio autoplay>
@@ -27,12 +28,17 @@
 </header>
 
 
-<div ng-view></div>
+<div class="mainView" ng-view></div>
+<div class="justForExplorer" >Unfortunately, ArgueAbout Does not work with Internet Explorer.
+    <br>
+    Please try on any of the other browsers available for free, such as Chrome, FireFox, Safari </div>
 <footer>
 
         <ul class="navChat">
             <li role="presentation"><a href="#/about">אודות</a></li>
+            <li role="presentation">|</li>
             <li role="presentation"><a href="#/home">בית</a></li>
+            <li role="presentation">|</li>
             <li role="presentation" class="text-muted">cofferight 2016 &copy;</li>
         </ul>
 </footer>
