@@ -5,6 +5,6 @@ vendor/
 tmp
 .DS_Store
 .idea
-*.css
+app.css
 
 

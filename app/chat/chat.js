@@ -13,6 +13,8 @@
 
     module.controller('ChatCtrl', function ($location, $scope, ChatFactory, $interval) {
 
+        var REFEREE = 'הבורר'
+        this.referee = REFEREE;
         var that = this;
         this.currentArgue = ChatFactory.currArgue();
         this.currentPov = ChatFactory.currPov();
@@ -81,13 +83,13 @@
         this.argueBot = $interval(function () {
             msgs = ChatFactory.query();
 
-            if (msgs.length % 5 === 0 && msgs.length >=8 && msgs[msgs.length - 1].by !== 'הבורר'
-                && msgs[msgs.length - 2].by !== 'הבורר' && msgs[msgs.length - 3].by !== 'הבורר'
-                && msgs[msgs.length - 4].by !== 'הבורר' && msgs[msgs.length - 5].by !== 'הבורר') {
+            if (msgs.length % 5 === 0 && msgs.length >=8 && msgs[msgs.length - 1].by !== REFEREE
+                && msgs[msgs.length - 2].by !== REFEREE&& msgs[msgs.length - 3].by !== REFEREE
+                && msgs[msgs.length - 4].by !== REFEREE&& msgs[msgs.length - 5].by !== REFEREE) {
 
                 botMsg = {
                     txt: ChatFactory.getRandomMsg(),
-                    by: 'הבורר'
+                    by: REFEREE
                 };
                 console.log('msg length = ', msgs.length);
                 console.log('msg by: ', msgs[msgs.length - 1].by);
