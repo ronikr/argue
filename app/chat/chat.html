@@ -9,7 +9,7 @@
 
             <p scroll-glue ng-repeat="msg in vm.msgs">
                 <span class="msgBy"
-                      ng-class="{'referee': msg.by == vm.referee, 'me': msg.by === vm.currentPov.name}">{{msg.by}}:</span>
+                      ng-class="{'referee': msg.by == vm.referee, 'me': msg.by == vm.currentPov.name}">{{msg.by}}:</span>
                 <span>{{msg.txt}}</span>
             </p>
         </div>
