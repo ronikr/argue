@@ -97,12 +97,7 @@
             }
         }, 3000);
 
-        window.onbeforeunload = closingCode;
-        function closingCode(){
-            confirm('Are you sure you want to leave?');
-            alert('yo');
-            return null;
-        }
+
 
 
     });

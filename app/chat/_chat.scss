@@ -9,7 +9,8 @@ footer {
   background-color: lighten($grey, 10%);
   color: white;
   height: 300px;
-  padding: 20px;
+  //padding: 20px;
+  padding: 0.5em;
   overflow-y: scroll;
 }
 
@@ -19,6 +20,13 @@ footer {
 
 .referee {
   color: $dark-accent1;
+}
+
+.chatHeadline {
+  font-weight: bold;
+  color: lighten(rgba(0,0,0,0.6), 50%);
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+  //background-color: $light-accent1;
 }
 
 .me {
@@ -72,6 +80,7 @@ form {
     }
   }
   .povName {
+    padding: 0 0.5em;
     @media (max-width: 560px) {
       display: none;
     }

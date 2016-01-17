@@ -1,13 +1,13 @@
 <section>
 
 
-    <h1>{{vm.currentArgue.name}}</h1>
+    <h1 class="chatHeadline">{{vm.currentArgue.name}}</h1>
 
     <div>
         <div class="historyChat">
             <p ng-show="vm.msgs.length === 0" class="intro">{{vm.currentPov.intro}}...</p>
 
-            <p ng-repeat="msg in vm.msgs">
+            <p scroll-glue ng-repeat="msg in vm.msgs">
                 <span class="msgBy"
                       ng-class="{'referee': msg.by == vm.referee, 'me': msg.by === vm.currentPov.name}">{{msg.by}}:</span>
                 <span>{{msg.txt}}</span>
@@ -19,7 +19,7 @@
             <input type="hidden" autofocus="true"/>
 
             <div class="cool-input">
-                <span class="povName">{{vm.currentPov.name}}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="povName">{{vm.currentPov.name}}:</span>
 
                 <input class="chatInput" type="text" required ng-model="vm.newMsg.txt" placeholder="הקלידו כאן"/>
 
