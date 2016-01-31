@@ -83,9 +83,9 @@
         this.argueBot = $interval(function () {
             msgs = ChatFactory.query();
 
-            if (msgs.length % 5 === 0 && msgs.length >=8 && msgs[msgs.length - 1].by !== REFEREE
-                && msgs[msgs.length - 2].by !== REFEREE&& msgs[msgs.length - 3].by !== REFEREE
-                && msgs[msgs.length - 4].by !== REFEREE&& msgs[msgs.length - 5].by !== REFEREE) {
+            if (msgs.length % 5 === 0 && msgs.length >= 8 && msgs[msgs.length - 1].by !== REFEREE
+                && msgs[msgs.length - 2].by !== REFEREE && msgs[msgs.length - 3].by !== REFEREE
+                && msgs[msgs.length - 4].by !== REFEREE && msgs[msgs.length - 5].by !== REFEREE) {
 
                 botMsg = {
                     txt: ChatFactory.getRandomMsg(),
@@ -96,8 +96,6 @@
                 ChatFactory.send(botMsg);
             }
         }, 3000);
-
-
 
 
     });
