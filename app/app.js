@@ -12,6 +12,8 @@ angular.module('myApp', [
  'ngAnimate'
 ])
 
+.run(['$route', function ($route) { }])
+
 .config(function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 });

@@ -9,16 +9,45 @@
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="vendor/angular-bootstrap/ui-bootstrap-csp.css"/>
     <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="vendor/css-animate/animate.css">
+    <link rel="stylesheet" href="utils/css-animate/animate.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
-    <script src="vendor/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'>
+    <meta property="og:url" content="http://argueabout.com"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="פלטפורמת הויכוחים של 2016"/>
+    <meta property="og:description"
+          content="Argue About הוא הוא פלטפורמת הויכוחים המובילה של 2016. בחרו צד ואנחנו נמצא לכם מישהו מהצד השני לריב איתו. "/>
+    <meta property="og:image" content="images/argueAboutMobile.png"/>
+    <meta property="fb:app_id" content="825313520910716"/>
 </head>
 <body>
+<!--Facebook-->
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '825313520910716',
+            xfbml: true,
+            version: 'v2.5'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!--end of facebook code-->
 <audio autoplay>
     <source src="sound/glassBreak.mp3" type="audio/mpeg">
 </audio>
 
-<header class="header">
+<header>
 
     <div class="siteHeadline">
         <img src="images/argueAbout.png" alt="Argue About" class="siteHeadImg animated zoomIn">
@@ -27,17 +56,28 @@
 </header>
 
 
-<div ng-view></div>
+<div class="mainView" ng-view></div>
+<div class="justForExplorer">Unfortunately, ArgueAbout Does not work with Internet Explorer.
+    <br>
+    Please try on any of the other browsers available for free, such as Chrome, FireFox, Safari
+</div>
 <footer>
+    <a href="#/about">אודות</a>
+    <span class="text-muted"> | </span>
+    <a href="#/home">בית</a>
+    <span class="text-muted"> | </span>
+    <span class="text-muted">cofferight 2016 &copy; </span>
+    <span
+            class="fb-like"
+            data-share="true"
+            data-width="450"
+            data-show-faces="true">
+    </span>
 
-        <ul class="navChat">
-            <li role="presentation"><a href="#/about">אודות</a></li>
-            <li role="presentation"><a href="#/home">בית</a></li>
-            <li role="presentation" class="text-muted">cofferight 2016 &copy;</li>
-        </ul>
+
 </footer>
 
-<script src="vendor/utils.js"></script>
+<script src="utils/utils.js"></script>
 <script src="vendor/jquery/dist/jquery.js"></script>
 <script src="vendor/angular/angular.js"></script>
 <script src="vendor/angular-route/angular-route.js"></script>
@@ -52,7 +92,9 @@
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
 <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
-<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="vendor/angular-animate/angular-animate.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Alef:400,700&subset=latin,hebrew' rel='stylesheet' type='text/css'>
+
 
 </body>
 </html>

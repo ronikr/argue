@@ -1,0 +1,36 @@
+//@import "../variables";
+
+.argument {
+  background-color: lighten($grey, 20%);
+  text-align: center;
+  border-radius: 2%;
+  padding: 3px;
+  margin: 10px;
+  font-family: 'Orbitron', sans-serif;
+
+  .btn {
+    margin: 10px;
+  }
+
+}
+
+img {
+
+  @media all and (max-width: 500px) {
+    width: 80%;
+
+  }
+}
+
+.argueSearchBox {
+  margin: 10px;
+
+}
+
+.povBtn {
+  margin: 20px;
+  a:hover {
+    text-decoration: none;
+
+  }
+}

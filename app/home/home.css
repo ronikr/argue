@@ -1,0 +1,23 @@
+.argument {
+  background-color: #adadad;
+  text-align: center;
+  border-radius: 2%;
+  padding: 3px;
+  margin: 10px;
+  font-family: 'Orbitron', sans-serif; }
+  .argument .btn {
+    margin: 10px; }
+
+@media all and (max-width: 500px) {
+  img {
+    width: 80%; } }
+
+.argueSearchBox {
+  margin: 10px; }
+
+.povBtn {
+  margin: 20px; }
+  .povBtn a:hover {
+    text-decoration: none; }
+
+/*# sourceMappingURL=home.css.map */

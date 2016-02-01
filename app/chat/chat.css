@@ -1,0 +1,65 @@
+footer {
+  position: fixed;
+  bottom: 0; }
+
+.historyChat {
+  background-color: #949494;
+  color: white;
+  height: 300px;
+  padding: 20px;
+  overflow-y: scroll; }
+
+.msgBy {
+  color: greenyellow; }
+
+.referee {
+  color: #550000; }
+
+.me {
+  color: darkblue; }
+
+form {
+  width: 100%;
+  display: flex; }
+  @media (max-width: 700px) {
+    form {
+      width: 100%; } }
+
+.input-group {
+  width: 80%; }
+
+#txtMsg {
+  color: #000;
+  width: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.intro {
+  font-size: 1.5em;
+  font-weight: bold; }
+
+.cool-input {
+  margin-top: 0.4em;
+  background-color: white;
+  width: 100%;
+  color: black;
+  height: 3em;
+  line-height: 2em; }
+  .cool-input input {
+    border: 0;
+    width: 60%; }
+    .cool-input input:focus {
+      outline: none; }
+  @media (max-width: 560px) {
+    .cool-input .povName {
+      display: none; } }
+
+.myBtn {
+  margin-top: 0.4em;
+  height: 3em;
+  border: 0px;
+  background-color: #db2021; }
+  .myBtn:hover {
+    background-color: #ff2223; }
+
+/*# sourceMappingURL=chat.css.map */
