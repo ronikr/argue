@@ -56,7 +56,9 @@ footer {
     li {
       display: inline;
       padding: 20px;
+
     }
+    //li+li { border-right: 1px solid #fff }
     li:nth-child(-n+2) {
       &::after {
         position: relative;
@@ -119,6 +121,7 @@ footer {
   width: 150px;
   height: 30px;
 }
+
 
 
 
